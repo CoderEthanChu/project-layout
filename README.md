@@ -52,13 +52,14 @@
 将具体实际的应用代码放在`/internal/app` 目录中（例如 `/internal/app/myapp`），将多个应用要共用的代码放到`/internal/pkg`目录（例如 `/internal/pkg/myprivlib`）
 
 
-### `/pkg`
+### `/pkg`目录
 
-Library code that's ok to use by external applications (e.g., `/pkg/mypubliclib`). Other projects will import these libraries expecting them to work, so think twice before you put something here :-)
+该目录用于放置库代码（library code），库代码可以被外部应用使用（例如 `/pkg/mypubliclib`）。其他项目可能会导入使用这个目录下的库代码，并且期望能够运行正常，所以请想清楚相应的代码是否可以添加到这个目录。
 
-It's also a way to group Go code in one place when your root directory contains lots of non-Go components and directories making it easier to run various Go tools (as mentioned in the [`Best Practices for Industrial Programming`](https://www.youtube.com/watch?v=PTE4VJIdHPg) from GopherCon EU 2018).
+当你的项目根目录包含其一些他非go的组件和目录时，`/pkg`目录也是一种把go代码组织到一起且容易运行各种go工具的方法。
 
-See the [`/pkg`](pkg/README.md) directory if you want to see which popular Go repos use this project layout pattern. This is a common layout pattern, but it's not universally accepted and some in the Go community don't recommend it. 
+参考[`/pkg`](pkg/README.md)目录中的内容，可以看到一些流行的go项目代码库中使用`/pkg`这个目录结构。这种方式很常见的，但是确没有被普遍接受，一些go社区的人并不推荐这种代码组织方式。
+
 
 ### `/vendor`
 
