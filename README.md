@@ -1,8 +1,10 @@
 # go语言项目的标准布局方式（Standard Go Project Layout）
 
-这是一个go语言应用工程的基本的项目结构形式。虽然这种形式不是由go语言核心开发团队提供的官方标准版本，但go语言生态中许多新老项目都采用了这种项目结构组成形式。其中的一些项目结构形式相比其他的更加流行。这个布局方式除了一些能够支持实际任何大型应用工程的目录结构布局以外，还附带一些小的增强。
+这是一个go语言应用工程的基本的项目结构形式。虽然这种形式不是由go语言核心开发团队提供的官方标准版本，但go语言生态中许多新老项目都采用了这种项目结构组成形式。其中的一些项目结构形式相比其他的更加流行。这个布局方式除了一些能够支持实际任何大型应用工程的目录结构布局以外，还附带许多小的增强。
 
 This is a basic layout for Go application projects. It's not an official standard defined by the core Go dev team; however, it is a set of common historical and emerging project layout patterns in the Go ecosystem. Some of these patterns are more popular than others. It also has a number of small enhancements along with several supporting directories common to any large enough real world application.
+
+如果你只是打算尝试学习一下golang，或者做做poc验证，或者是创建自己玩玩的项目，那么用这种项目布局结构就过头了，并不合适你的场景。建议你用简单的方式处理，可能一个单独的main.go文件就绰绰有余了。随着你的项目规模扩大，你需要记住一点，让你的代码保持合理的结构是很重要的，不然最终项目的状态将是一堆包含大量隐式依赖和全局状态的混乱代码。当有更多的团队成员在项目上工作的时候，项目将需要更多的目录结构。这体现引入package/lib的常用管理方式的重要性。当你有一个开源项目或者你知道其他项目将import你工程的代码时，这就体现有私有包和私有代码（项目中的`internal`目录）的重要性。使用的时候请Clone这个库，你可以保留你要的，然后删除其他的，因为你没有必要使用全部所有项目目录结构。不是这里所有的目录在每个项目上都用得到，就连`vendor`目录也不是普遍都使用的。
 
 If you are trying to learn Go or if you are building a PoC or a toy project for yourself this project layout is an overkill. Start with something really simple (a single `main.go` file is more than enough). As your project grows keep in mind that it'll be important to make sure your code is well structured otherwise you'll end up with a messy code with lots of hidden dependencies and global state. When you have more people working on the project you'll need even more structure. That's when it's important to introduce a common way to manage packages/libraries. When you have an open source project or when you know other projects import the code from your project repository that's when it's important to have private (aka `internal`) packages and code. Clone the repository, keep what you need and delete everything else! Just because it's there it doesn't mean you have to use it all. None of these patterns are used in every single project. Even the `vendor` pattern is not universal.
 
