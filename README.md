@@ -45,11 +45,12 @@
 
 参考 [`/cmd`](cmd/README.md) 目录的示例.
 
-### `/internal`
+### `/internal` 目录
 
-Private application and library code. This is the code you don't want others importing in their applications or libraries.
+该目录放私有功能和私有库的代码。这个目录中的代码是不希望被其他应用或者类库导入使用的。
 
-Put your actual application code in the `/internal/app` directory (e.g., `/internal/app/myapp`) and the code shared by those apps in the `/internal/pkg` directory (e.g., `/internal/pkg/myprivlib`).
+将具体实际的应用代码放在`/internal/app` 目录中（例如 `/internal/app/myapp`），将多个应用要共用的代码放到`/internal/pkg`目录（例如 `/internal/pkg/myprivlib`）
+
 
 ### `/pkg`
 
