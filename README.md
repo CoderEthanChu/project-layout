@@ -1,4 +1,6 @@
-# Standard Go Project Layout
+# go语言项目的标准布局方式（Standard Go Project Layout）
+
+这是一个go语言应用工程的基本的项目结构形式。虽然这种形式不是由go语言核心开发团队提供的官方标准版本，但go语言生态中许多新老项目都采用了这种项目结构组成形式。其中的一些项目结构形式相比其他的更加流行。这个布局方式除了一些能够支持实际任何大型应用工程的目录结构布局以外，还附带一些小的增强。
 
 This is a basic layout for Go application projects. It's not an official standard defined by the core Go dev team; however, it is a set of common historical and emerging project layout patterns in the Go ecosystem. Some of these patterns are more popular than others. It also has a number of small enhancements along with several supporting directories common to any large enough real world application.
 
