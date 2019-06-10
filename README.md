@@ -9,11 +9,15 @@
 该工程来自社区努力，如果你发现有新的项目结构布局方式需要加入或者已有的项目布局需要更新，请上报issue。
 
 你可以通过执行`gofmt`和`golint`来获得命名，格式化，代码风格等方面的帮助。另外你应该阅读如下go代码风格指导、建议文档。
+
  国内访问能访问参考文档:
+ 
 *  https://golang.google.cn/doc/effective_go.html#names
 * https://github.com/golang/go/wiki/CodeReviewComments
 * [Style guideline for Go packages](https://rakyll.org/style-packages) (rakyll/JBD)
+
 不能访问：
+
 * https://talks.golang.org/2014/names.slide
 * https://golang.org/doc/effective_go.html#names
 * https://blog.golang.org/package-names
@@ -22,6 +26,7 @@
 参考[`Go Project Layout`](https://medium.com/golang-learn/go-project-layout-e5213cdcfaa2) 获取额外的项目背景信息。
 
 更多的命名和包组织以及其他代码结构的建议：
+
 * [GopherCon EU 2018: Peter Bourgon - Best Practices for Industrial Programming](https://www.youtube.com/watch?v=PTE4VJIdHPg)
 * [GopherCon Russia 2018: Ashley McNamara + Brian Ketelsen - Go best practices.](https://www.youtube.com/watch?v=MzTcsI6tn-0)
 * [GopherCon 2017: Edward Muller - Go Anti-Patterns](https://www.youtube.com/watch?v=ltqV6pDKZD8)
