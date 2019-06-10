@@ -1,8 +1,8 @@
-# go语言项目的标准布局方式（Standard Go Project Layout）
+# golang工程标准结构（Standard Go Project Layout）
 
-这是一个go语言应用工程的基本的项目结构形式。虽然这种形式不是由go语言核心开发团队提供的官方标准版本，但go语言生态中许多新老项目都采用了这种项目结构组成形式。其中的一些项目结构形式相比其他的更加流行。这个布局方式除了一些能够支持实际任何大型应用工程的目录结构布局以外，还附带许多小的增强。
+这是golang应用项目的代码工程的基本的项目结构形式。虽然结构不是由go语言核心开发团队提供的官方标准版本，但go语言生态中许多新老项目都采用了这种项目结构组成形式。其中的一些项目结构相比其他方式的更加流行。这个布局方式除了一些能够支持实际任何大型应用工程的目录结构布局以外，还附带许多小的增强。
 
-如果你只是打算尝试学习一下golang，或者做做poc验证，或者是创建自己玩玩的项目，那么用这种项目布局结构就过头了，并不合适你的场景。建议你用简单的方式处理，可能一个单独的main.go文件就绰绰有余了。随着你的项目规模扩大，你需要记住一点，让你的代码保持合理的结构是很重要的，不然最终项目的状态将是一堆包含大量隐式依赖和全局状态的混乱代码。当有更多的团队成员在项目上工作的时候，项目将需要更多的目录结构。这体现引入package/lib的常用管理方式的重要性。当你有一个开源项目或者你知道其他项目将import你工程的代码时，这就体现有私有包和私有代码（项目中的`internal`目录）的重要性。在创建项目的时候Clone这个库，可以保留你要的，然后删除其他的，因为你没有必要使用全部所有项目目录结构。不是这里所有的目录在每个项目上都用得到，就连`vendor`目录也不是普遍都使用的。
+如果你只是打算尝试学习一下golang，或者做做poc验证，或者是创建自己玩玩的项目，那么用这种项目布局结构就过头了，并不合适你的场景。建议你用简单的方式处理，可能一个单独的main.go文件就绰绰有余了。随着你的项目规模扩大，你需要注意，让你的代码保持合理的结构是很重要的，不然最终项目的状态将是一堆包含大量隐式依赖和全局状态的混乱代码。当有更多的团队成员在项目上工作的时候，项目将需要更多的目录结构。这体现引入package/lib的常用管理方式的重要性。当你有一个开源项目或者你知道其他项目将import你工程的代码时，这就体现有私有包和私有代码（项目中的`internal`目录）的重要性。在创建项目的时候Clone这个库，可以保留你要的，然后删除其他的，因为你没有必要使用全部所有项目目录结构。不是这里所有的目录在每个项目上都用得到，就连`vendor`目录也不是普遍都使用的。
 
 该项目布局结构是为了通用性而设计，不会去引入一些非常特殊的go包结构
 
@@ -27,19 +27,16 @@
 * [GopherCon 2017: Edward Muller - Go Anti-Patterns](https://www.youtube.com/watch?v=ltqV6pDKZD8)
 * [GopherCon 2018: Kat Zien - How Do You Structure Your Go Apps](https://www.youtube.com/watch?v=oL6JBUk6tj0)
 
-## Go Directories
+## Go 工程目录介绍
 
-### `/cmd`
+### `/cmd`目录
+用于放对应工程的主应用main代码
+每个应用的目录名字应该和你想生成可执行文件名称相同（例如`/cmd/myapp`）
+每个应用的目录名字应该和你想生成可执行文件名称相同（例如`/cmd/myapp`）
+不要放太多的代码在应用目录cmd中，如果打算代码能够被其他项目import或者使用，应该放置到`/pkg`目录中。如果代码不是可复用的或者不希望其他项目复用，这个时候需要把代码放到`\internal`目录。别人使用代码的方式可能会让你意想不到，所有要明确你的意图，避免别人错误使用。
+通常的方式是`main`方法要精简，除了导入和调用来自`/internal`和`/pkg`目录的代码以外，没有其他类型代码。
 
-Main applications for this project.
-
-The directory name for each application should match the name of the executable you want to have (e.g., `/cmd/myapp`).
-
-Don't put a lot of code in the application directory. If you think the code can be imported and used in other projects, then it should live in the `/pkg` directory. If the code is not reusable or if you don't want others to reuse it, put that code in the `/internal` directory. You'll be surprised what others will do, so be explicit about your intentions!
-
-It's common to have a small `main` function that imports and invokes the code from the `/internal` and `/pkg` directories and nothing else.
-
-See the [`/cmd`](cmd/README.md) directory for examples.
+参考 [`/cmd`](cmd/README.md) 目录的示例.
 
 ### `/internal`
 
