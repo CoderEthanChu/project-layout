@@ -95,9 +95,9 @@
 把诸如`confd` 、`consul-template` 等目录的模板文件放置到该目录下。
 
 
-### `/init`
+### `/init`目录
 
-System init (systemd, upstart, sysv) and process manager/supervisor (runit, supervisord) configs.
+该目录放置系统初始化（systemd，upstart，sysv），进程管理（runint，supervisord）等相关配置
 
 ### `/scripts`
 
