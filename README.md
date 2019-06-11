@@ -1,6 +1,6 @@
 # golang工程标准结构（Standard Go Project Layout）
 
-这是golang应用工程代码的基本的项目结构。虽然该结构不是由go语言核心开发团队提供的官方标准版本，但go语言生态中许多新老项目都采用了这种项目结构组成形式。其中的一些项目结构方式也比较流行。这个项目布局结构除了支持实际各种大型应用，还附带许多小的增强。
+这是golang应用工程代码的基本的项目结构。虽然该结构不是由go语言核心开发团队提供的官方标准版本，但是在go语言生态中许多新老项目都采用了这种项目结构组成形式。其中的一些项目结构方式也比较流行。这个项目布局结构除了支持实际各种大型应用，还附带许多小的增强。
 
 如果你只是打算尝试学习一下golang，或者做做poc验证，或者是创建自己玩玩的项目，那么用这种项目布局结构就过头了，并不合适你的场景。建议你用简单的方式处理，可能一个单独的main.go文件就绰绰有余了。随着你的项目规模扩大，你需要注意，让你的代码保持合理的结构是很重要的，不然最终项目的状态将是一堆包含大量隐式依赖和全局状态的混乱代码。当有更多的团队成员在项目上工作的时候，项目将需要更多的目录结构。这体现引入package/lib的常用管理方式的重要性。当你有一个开源项目或者你知道其他项目将import你工程的代码时，这就体现有私有包和私有代码（项目中的`internal`目录）的重要性。在创建项目的时候Clone这个库，可以保留你要的，然后删除其他的，因为你没有必要使用全部所有项目目录结构。不是这里所有的目录在每个项目上都用得到，就连`vendor`目录也不是普遍都使用的。
 
@@ -61,23 +61,26 @@
 参考[`/pkg`](pkg/README.md)目录中的内容，可以看到一些流行的go项目代码库中使用`/pkg`这个目录结构。这种方式很常见的，但是确没有被普遍接受，一些go社区的人并不推荐这种代码组织方式。
 
 
-### `/vendor`
+### `/vendor`目录
 
-Application dependencies (managed manually or by your favorite dependency management tool like [`dep`](https://github.com/golang/dep)).
+该目录为应用依赖目录（可以通过手工进行管理，或是者通过你们喜欢的依赖管理工具进行管理比如[`dep`](https://github.com/golang/dep)）
 
-Don't commit your application dependencies if you are building a library.
+如果你们是构建一个库（library），不要提交应用依赖。
 
-## Service Application Directories
 
-### `/api`
+## service相关服务目录
 
-OpenAPI/Swagger specs, JSON schema files, protocol definition files.
+### `/api`目录
 
-See the [`/api`](api/README.md) directory for examples.
+该目录放置OpenAPI/Swagger描述文件，JSON格式文件，protocol协议定义文件。
 
-## Web Application Directories
+参考[`/api`](api/README.md) 获取相关实例。
 
-### `/web`
+
+## Web应用相关目录
+
+### `/web`目录
+
 
 Web application specific components: static web assets, server side templates and SPAs.
 
