@@ -68,7 +68,7 @@
 如果你们是构建一个库（library），不要提交应用依赖。
 
 
-## service相关服务目录
+## service服务涉及的目录
 
 ### `/api`目录
 
@@ -77,20 +77,23 @@
 参考[`/api`](api/README.md) 获取相关实例。
 
 
-## Web应用相关目录
+## Web应用涉及的目录
 
 ### `/web`目录
 
 
-Web application specific components: static web assets, server side templates and SPAs.
+该目录放置web应用相关的组件代码：静态web资源，服务端模版和单页应用等
 
-## Common Application Directories
 
-### `/configs`
+## 常规应用涉及的目录
 
-Configuration file templates or default configs.
 
-Put your `confd` or `consul-template` template files here.
+### `/configs`目录
+
+该目录放置配置文件或者配置模板。
+
+把诸如`confd` 、`consul-template` 等目录的模板文件放置到该目录下。
+
 
 ### `/init`
 
