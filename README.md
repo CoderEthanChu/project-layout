@@ -107,19 +107,21 @@
 
 查看 [`/scripts`](scripts/README.md) 目录获取更多示例。
 
-### `/build`
+### `/build`目录
 
-Packaging and Continuous Integration.
+该目录放置构建打包和持续集成的内容。
 
-Put your cloud (AMI), container (Docker), OS (deb, rpm, pkg) package configurations and scripts in the `/build/package` directory.
+将应用相关的云，容器，操作系统的打包配置和脚本放到`/build/package`目录下。
 
-Put your CI (travis, circle, drone) configurations and scripts in the `/build/ci` directory. Note that some of the CI tools (e.g., Travis CI) are very picky about the location of their config files. Try putting the config files in the `/build/ci` directory linking them to the location where the CI tools expect them (when possible).
+将应用持续集成(travis, circle, drone)的配置和脚本放置到`/build/ci`目录下。注意有些持续集成工具（如Travis CI）他们对其配置文件所在位置有严格邀请。可以尝试将他们的配置文件放到`/build/ci` 目录中，然后链接到CI工具希望的目录。
 
-### `/deployments`
+### `/deployments` 目录
 
-IaaS, PaaS, system and container orchestration deployment configurations and templates (docker-compose, kubernetes/helm, mesos, terraform, bosh).
+该目录放置部署相关的文件，如IaaS,PaaS,主机和容器编排的部署配置文件和模板文件（如 ocker-compose, kubernetes/helm, mesos, terraform, bosh等）
 
-### `/test`
+### `/test`目录
+
+
 
 Additional external test apps and test data. Feel free to structure the `/test` directory anyway you want. For bigger projects it makes sense to have a data subdirectory. For example, you can have `/test/data` or `/test/testdata` if you need Go to ignore what's in that directory. Note that Go will also ignore directories or files that begin with "." or "_", so you have more flexibility in terms of how you name your test data directory.
 
