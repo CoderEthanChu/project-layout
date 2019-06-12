@@ -161,16 +161,17 @@
 
 ### `/website`目录
 
-如果不使用github page，这个目录可以放置你的项目介绍网站信息
+如果不使用github page，这个目录可以放置你的项目工程说明网站
 参考[`/website`](website/README.md) 获取更多示例。
 
-## Directories You Shouldn't Have
+## 不应该创建的目录
 
-### `/src`
+### `/src`目录
 
-Some Go projects do have a `src` folder, but it usually happens when the devs came from the Java world where it's a common pattern. If you can help yourself try not to adopt this Java pattern. You really don't want your Go code or Go projects to look like Java :-)
+一些go的项目确是有`src`的目录，但这种情况发生在来熟悉java的开发人员身上，因为在java开发中src目录是项目工程中很常见的。可以尝试不再使用这种java的布局。真的不希望你的go代码或者go工程看起来像java:-)
 
-Don't confuse the project level `/src` directory with the `/src` directory Go uses for its workspaces as described in [`How to Write Go Code`](https://golang.org/doc/code.html). The `$GOPATH` environment variable points to your (current) workspace (by default it points to `$HOME/go` on non-windows systems). This workspace includes the top level `/pkg`, `/bin` and `/src` directories. Your actual project ends up being a sub-directory under `/src`, so if you have the `/src` directory in your project the project path will look like this: `/some/path/to/workspace/src/your_project/src/your_code.go`. Note that with Go 1.11 it's possible to have your project outside of your `GOPATH`, but it still doesn't mean it's a good idea to use this layout pattern.
+
+不要将项目级别的`/src` 目录和go工作空间的`/src`目录（其中[`How to Write Go Code`](https://golang.org/doc/code.html)描述）混淆。`$GOPATH`的环境变量指向的是当前工作空间（非windows系统默认指向`$HOME/go` ）。工作空间目录包括三个顶级目录`/pkg`, `/bin` 和 `/src` 。实际项目最终是在`/src`下面的一个子目录。所以如果在工程中有`/src`目录，则文件路径就会像这样子`/some/path/to/workspace/src/your_project/src/your_code.go`。注意一点在GO1.11以后，项目工程可以放置到`GOPATH`以外，但是这并不意味着在项目中使用`/src`是一个好方式。
 
 
 ## Badges
