@@ -121,15 +121,14 @@
 
 ### `/test`目录
 
+该目录放置其他外部的测试应用和测试数据。`/test` 目录内容可以自由构建。对于大型的项目来说创建一个数据子目录比较合理。例如，可以创建`/test/data` 或者 `/test/testdata`来让go忽略其中内容。注意go会忽略以"." 或者"_"开头的文件或者目录，所以你可以有更灵活的方式来命名测试数据目录。
 
+参考[`/test`](test/README.md)目录中的示例。
 
-Additional external test apps and test data. Feel free to structure the `/test` directory anyway you want. For bigger projects it makes sense to have a data subdirectory. For example, you can have `/test/data` or `/test/testdata` if you need Go to ignore what's in that directory. Note that Go will also ignore directories or files that begin with "." or "_", so you have more flexibility in terms of how you name your test data directory.
+## 其他目录
 
-See the [`/test`](test/README.md) directory for examples.
+### `/docs`目录
 
-## Other Directories
-
-### `/docs`
 
 Design and user documents (in addition to your godoc generated documentation).
 
