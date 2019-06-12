@@ -97,15 +97,15 @@
 
 ### `/init`目录
 
-该目录放置系统初始化（systemd，upstart，sysv），进程管理（runint，supervisord）等相关配置
+该目录放置系统初始化（systemd，upstart，sysv），进程管理（runint，supervisord）等相关配置。
 
-### `/scripts`
+### `/scripts`目录
 
-Scripts to perform various build, install, analysis, etc operations.
+该目录放置各种功能脚本文件，如构建，安装，分析等等。
 
-These scripts keep the root level Makefile small and simple (e.g., `https://github.com/hashicorp/terraform/blob/master/Makefile`).
+这些功能脚本使得根目录的makefile变得更简洁，（示例 `https://github.com/hashicorp/terraform/blob/master/Makefile` ）
 
-See the [`/scripts`](scripts/README.md) directory for examples.
+查看 [`/scripts`](scripts/README.md) 目录获取更多示例。
 
 ### `/build`
 
