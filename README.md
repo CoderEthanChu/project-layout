@@ -157,13 +157,12 @@
 ### `/assets`目录
 
 
-Other assets to go along with your repository (images, logos, etc).
+该目录放置项目工程需要的额外资源文件(如 图片，logo等)
 
-### `/website`
+### `/website`目录
 
-This is the place to put your project's website data if you are not using Github pages.
-
-See the [`/website`](website/README.md) directory for examples.
+如果不使用github page，这个目录可以放置你的项目介绍网站信息
+参考[`/website`](website/README.md) 获取更多示例。
 
 ## Directories You Shouldn't Have
 
