@@ -129,32 +129,33 @@
 
 ### `/docs`目录
 
+该目录放置设计文档和用户文档（这类由godoc生成的文档之外文档）
 
-Design and user documents (in addition to your godoc generated documentation).
+参考 [`/docs`](docs/README.md) 获取更多示例
 
-See the [`/docs`](docs/README.md) directory for examples.
 
-### `/tools`
+### `/tools`目录
 
-Supporting tools for this project. Note that these tools can import code from the `/pkg` and `/internal` directories.
+该目录放置用于项目所用到的工具。注意这些工具可以被`/pkg` 和 `/internal` 目录中的代码导入使用。
 
-See the [`/tools`](tools/README.md) directory for examples.
+参考 [`/tools`](tools/README.md) 获取更多的示例。
 
-### `/examples`
+### `/examples` 目录
 
-Examples for your applications and/or public libraries.
+该目录放置应用或者开放libraries的使用示例。
 
-See the [`/examples`](examples/README.md) directory for examples.
+参考[`/examples`](examples/README.md) 获取跟多示例。
 
-### `/third_party`
+### `/third_party`目录
 
-External helper tools, forked code and other 3rd party utilities (e.g., Swagger UI).
+该目录放置外部辅助工具，fork的代码，和第三方的工具（例如 Swagger UI之类）
 
-### `/githooks`
+### `/githooks`目录
 
-Git hooks.
+该目录放置Git钩子配置.
 
-### `/assets`
+### `/assets`目录
+
 
 Other assets to go along with your repository (images, logos, etc).
 
